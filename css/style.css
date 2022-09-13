@@ -52,20 +52,45 @@ img {
   width: calc(405px * 3);
   margin: auto;
 }
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  border-radius: 50%;
+  background-color: white;
+}
 .slick-prev:before,
 .slick-next:before {
-  font-family: "slick";
+  content: ".";
+  font-family: "Courier New", Courier, monospace;
   font-size: 60px;
   line-height: 1;
   opacity: 0.75;
-  color: rgb(196, 196, 196);
+  color: transparent;
+  z-index: 10;
+  background-image: url(../images/nex-left.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.slick-prev {
-  z-index: 9999;
-  left: -2;
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: white;
+  background-color: white;
+  outline: none;
 }
 .slick-next {
-  right: 15px;
+  right: -31px;
+}
+.slick-next:before {
+  content: ".";
+  background-image: url(../images/next.png);
+}
+.slick-next:hover::before {
 }
 
 .movies-slider__img {
